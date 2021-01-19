@@ -27,7 +27,7 @@ class DBProvider {
 
     // import 'package:path/path.dart'; が必要
     // なぜか サジェスチョンが出てこない
-    String path = join(documentsDirectory.path, "SubsucriptionDB.db");
+    String path = join(documentsDirectory.path, "SubsucDB.db");
 
     return await openDatabase(path, version: 1, onCreate: _createTable);
   }
@@ -40,7 +40,8 @@ class DBProvider {
             "id TEXT PRIMARY KEY,"
             "name TEXT,"
             "amount INTEGER,"
-            "billingPeriod TEXT,"
+            "billingPeriod INTEGER,"
+            "billingtext TEXT,"
             "startDate TEXT,"
             "subsuc INTEGER"
             ")"
